@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Astoria Royals</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">  
+</head>
+<body>
+  <div class="header">
+    <div class="header-top">
+      <div class="header-logos">
+        <img src="{% static 'Assets/logo and rera/C-1226-Astoria-Royals-Landing-Page-v2.png' %}" alt="Astoria Royals Logo">
+        <!-- <img src="Assets/logo and rera/footer-2.png" alt="Nirman Greens Logo"> -->
+      </div>
+      <div>
+        <button class="site-visit-btn">SCHEDULE A SITE VISIT</button>
+        <span class="menu-icon">&#9776;</span>
+      </div>
+    </div>
+   
+  </div>
+  <div class="prestige-section">
+    <div class="prestige-container">
+      <div class="prestige-title">
+        Where<br>prestige<br>takes<br>residence
+      </div>
+      <div class="prestige-content">
+        <div class="prestige-underline"></div>
+        <div class="prestige-desc">
+          Royal living is reimagined as Astoria Royals, a luxurious project of spacious 4 & 3 BHK homes. Thoughtful layout and optimal use of space are not the only defining attributes of this gem of a residence; it also boasts a massive array of amenities. Tucked in a fast-developing location and constructed with precision in mind to bring to you a lifestyle that resonates with the name of the project itself.
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <!-- Suite Life Upgrade Section Start -->
+  <section class="suite-upgrade-section">
+    <div class="suite-upgrade-box">
+      <form class="suite-upgrade-form" method="post" action="{% url 'leads:submit_lead' %}">
+        {% csrf_token %}
+        <div class="suite-form-heading">
+          THE SUITE LIFE UPGRADE<br>YOU'VE BEEN WAITING FOR IS HERE
+        </div>
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required />
+        <label for="phone">Phone Number*</label>
+        <input type="tel" id="phone" name="phone" required />
+        <button type="submit">KNOW MORE</button>
+        <div class="suite-form-tnc">*T&C Apply</div>
+        <div class="suite-form-privacy">*Your privacy is very important to us;<br>we will never share your information.</div>
+      </form>
+      <div class="suite-upgrade-image">
+        <img src="{% static 'assets/Desktop/baneer-4.png' %}" alt="Luxury Building" />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Suite Life Upgrade Section End -->
+    <!-- Walkthrough Section Start -->
+    <div class="walkthrough-section">
+      <div class="walkthrough-header">
+        <div class="walkthrough-title">Walkthrough</div>
+        <!-- <div class="walkthrough-artistic">Artistic Impression</div> -->
+      </div>
+      <div class="walkthrough-video-box">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Walkthrough Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <!-- Walkthrough Section End -->
+    <!-- Luxuries Section Start -->
+    <div class="luxuries-section">
+      <div class="luxuries-container">
+        <div class="luxuries-title">
+          A stellar<br>lineup<br>of luxuries
+          <span class="luxuries-underline"></span>
+        </div>
+        <div class="luxuries-desc">
+          Luxury isn't a label at Astoria Royals, it is a full-blown experience. From indulgent leisure spaces and wellness facilities to top-tier entertainment, every amenity is designed to surpass expectations. Whatever you desire, chances are, it’s already waiting for you.
+        </div>
+      </div>
+      <div class="luxuries-gallery">
+        <div class="luxuries-img">
+          <img src="{% static 'Assets/Desktop/banner-3.png' %}" alt="Amenity 1" />
+        </div>
+        <div class="luxuries-img luxuries-img-center">
+          <img src="{% static 'Assets/Desktop/baneer-4.png' %}" alt="Swimming Pool" />
+          <div class="luxuries-img-label">Swimming Pool</div>
+        </div>
+        <div class="luxuries-img">
+          <img src="{% static 'Assets/Desktop/banner-2.png' %}" alt="Amenity 2" />
+        </div>
+      </div>
+    </div>
+    <!-- Luxuries Section End -->
+    <!-- Sample Flat Section Start -->
+    <div class="sampleflat-section">
+      <div class="sampleflat-title">Sample Flat</div>
+      <div class="sampleflat-video-box">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Sample Flat Video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <!-- Sample Flat Section End -->
+    <!-- Landmark Destination Section Start -->
+    <div class="landmark-section">
+      <div class="landmark-container">
+        <div class="landmark-title">
+          A landmark<br>destination for<br>elevated<br>living
+          <span class="landmark-underline"></span>
+        </div>
+        <div class="landmark-desc">
+          Ravet is where Pune's future is unfolding. Tucked between the Pune-Mumbai Expressway and the Katraj-Dehu Bypass, this rapidly developing suburban neighbourhood connects you to wherever you want to be without the usual hassle. It owes its incredible connectivity to the old and new Mumbai highways, the Aundh-Ravet BRTS road, and Akurdi Railway Station. Top schools, business hubs, entertainment enclaves, healthcare facilities and other essentials are all within close proximity. This isn't just a convenient location, but a smart one.
+        </div>
+      </div>
+    </div>
+    <!-- Landmark Destination Section End -->
+    <!-- Map Section Start -->
+    <div class="map-section">
+      <div class="map-image">
+        <img src="{% static 'Assets/Desktop/baneer-5.png' %}" alt="Map Location" />
+      </div>
+      <a class="map-directions-btn" href="https://www.google.com/maps/dir/?api=1&destination=Astoria+Royals+Phase2" target="_blank">
+        <img src="{% static 'Assets/icons/google-maps-icon.svg' %}" alt="Google Maps" class="map-pin-icon" />
+        CLICK HERE TO GET DIRECTIONS
+      </a>
+    </div>
+    <!-- Map Section End -->
+    <!-- Trusted Section Start -->
+    <div class="trusted-section">
+      <div class="trusted-title">
+        From the trusted <span class="trusted-underline"></span>
+      </div>
+      <div class="trusted-container">
+        <div class="trusted-logo">
+          <img src="{% static 'Assets/logo and rera/logo.png' %}" alt="Nirman Greens Logo" />
+        </div>
+        <div class="trusted-desc">
+          Nirman Greens is a dynamic force in Pune's real estate sector with 30+ years of expertise. With 15 million square feet delivered and even more in the pipeline, every project they undertake is a testament to masterful craftsmanship and a relentless pursuit for excellence. Driven by innovation and an eye for detail, they remain steadfast in their commitment to conceiving spaces that adapt to nature and evolve with time.
+        </div>
+      </div>
+    </div>
+    <!-- Trusted Section End -->
+    <!-- Key Distances Section Start -->
+    <div class="distances-section">
+      <div class="distances-title">Key Distances</div>
+      <div class="accordion">
+        <div class="accordion-item accordion-open">
+          <div class="accordion-header">CONNECTIVITY <span class="accordion-arrow">&#9650;</span></div>
+          <div class="accordion-content">
+            <div class="accordion-row"><span>Mumbai-Pune Expressway</span><span>05 Mins.</span></div>
+            <div class="accordion-row"><span>Hinjawadi connectivity</span><span>20 Mins.</span></div>
+            <div class="accordion-row"><span>Balewadi High Street</span><span>30 Mins.</span></div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">LEISURE <span class="accordion-arrow">&#9660;</span></div>
+          <div class="accordion-content" style="display:none;"></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">SHOPPING/ MALLS <span class="accordion-arrow">&#9660;</span></div>
+          <div class="accordion-content" style="display:none;"></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">EDUCATIONAL INSTITUTES <span class="accordion-arrow">&#9660;</span></div>
+          <div class="accordion-content" style="display:none;"></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">HEALTHCARE <span class="accordion-arrow">&#9660;</span></div>
+          <div class="accordion-content" style="display:none;"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Key Distances Section End -->
+    <script>
+      // Accordion toggle logic
+      document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', function() {
+          const item = this.parentElement;
+          const isOpen = item.classList.contains('accordion-open');
+          document.querySelectorAll('.accordion-item').forEach(i => {
+            i.classList.remove('accordion-open');
+            i.querySelector('.accordion-content').style.display = 'none';
+            i.querySelector('.accordion-arrow').innerHTML = '&#9660;';
+          });
+          if (!isOpen) {
+            item.classList.add('accordion-open');
+            item.querySelector('.accordion-content').style.display = '';
+            item.querySelector('.accordion-arrow').innerHTML = '&#9650;';
+          }
+        });
+      });
+    </script>
+<!-- Footer Start -->
+<footer class="footer-section">
+  <div class="footer-container">
+    <div class="footer-col footer-logo">
+      <img src="{% static 'Assets/logo and rera/C-1226-Astoria-Royals-Landing-Page-v2.png' %}" alt="Astoria Royals Logo" class="footer-royals-logo" />
+    </div>
+    <!-- <div class="footer-col footer-nirman">
+      <div class="footer-nirman-label">PROJECT BY</div>
+      <img src="{% static 'Assets/logo and rera/footer-2.png' %}" alt="Nirman Greens Logo" class="footer-nirman-logo" />
+    </div> -->
+    <div class="footer-divider"></div>
+    <div class="footer-col footer-address">
+      <div class="footer-address-title">SITE ADDRESS</div>
+      <div class="footer-address-text">
+        Astoria Royals, Aundh-Ravet BRTS Road, Ravet, Pimpri-Chinchwad,<br>
+        Maharashtra - 412101
+      </div>
+      <div class="footer-address-title">CORPORATE OFFICE</div>
+      <div class="footer-address-text">
+        Amar Business Zone, B Wing, Office No. 902 S. No. 87/1A & 87 (Part),<br>
+        Baner, Pune - 411045
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-col footer-contact">
+      <div class="footer-contact-row">
+        <span class="footer-contact-icon">&#128222;</span>
+        <span class="footer-contact-number">00000 00000</span>
+      </div>
+      <div class="footer-qr-row">
+        <img src="{% static 'Assets/logo and rera/rera.png' %}" alt="QR 1" class="" />
+        <!-- <img src="Assets/logo and rera/footer-qr2.png" alt="QR 2" class="footer-qr" /> -->
+      </div>
+      <!-- <div class="footer-qr-label">MAHA RERA</div>
+      <div class="footer-qr-label">Project: P52100047684</div> -->
+      <div class="footer-social-row">
+        <a href="#" class="footer-social"><img src="{% static 'Assets/icons/1.png' %}" alt="Instagram"></a>
+        <a href="#" class="footer-social"><img src="{% static 'Assets/icons/2.png' %}" alt="YouTube"></a>
+        <a href="#" class="footer-social"><img src="{% static 'Assets/icons/3.png' %}" alt="Facebook"></a>
+        <a href="#" class="footer-social"><img src="{% static 'Assets/icons/4.png' %}" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->
+</body>
+</html>
